@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct creature
+{
+  int type;
+  int room;
+};
+struct room
+{
+  int roomNum;
+  int numOfAnimals;
+  int state;
+  int roomFull;
+  int n;
+  int s;
+  int e;
+  int w;
+};
+struct room* rooms;
+struct creature* creatures;
+int status = 40;
+void changeStatus(int s)
+{
+  status = status + s;
+}
+void switchRoom()
+{
+  
+}
+void alterRoom()
+{
+  
+}
+void look()
+{
+  
+}
+int main( int argc, char *argv[])
+{
+  int r = 0;
+  int c = 0;
+  char str[10];
+  int state = 0;
+  printf("How many rooms do you want?\n");
+  scanf("%d",&r);
+  printf("%d",r);
+  rooms =malloc(sizeof(struct room)*r);
+  for(int i=0;i<r;++i)
+    { 
+      scanf("%d %d %d %d %d",&rooms[i].state,&rooms[i].n,&rooms[i].s,&rooms[i].e,&rooms[i].w); 
+    }
+  scanf("%d", &c);
+  for(int i=0;i<c;++i)
+    {
+      scanf("%d %d", &creatures[i].type, &creatures[i].room);
+    }
+  creatures = malloc(sizeof(struct creature)*c);
+  
+  free(rooms);
+  free(creatures);
+  return 0;
+}
